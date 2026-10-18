@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@source "./";
+
+@theme {
+  --color-flip-dark: #0f172a;
+  --color-flip-blue: #2563eb;
+  --color-flip-purple: #7c3aed;
+}

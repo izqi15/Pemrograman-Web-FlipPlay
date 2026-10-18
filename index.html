@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FlipPlay - Temukan anime, drama, manga, dan light novel favoritmu.">
+    <title>FlipPlay | Explore Your Entertainment</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body class="min-h-screen bg-flip-dark text-slate-100">
+
+    <div
+        id="sidebar-overlay"
+        class="fixed inset-0 z-40 hidden bg-black/60 backdrop-blur-sm"
+        aria-hidden="true">
+    </div>
+
+    <aside
+        id="sidebar"
+        class="fixed inset-y-0 left-0 z-50 flex w-72 -translate-x-full flex-col border-r border-slate-700 bg-slate-900 p-6 transition-transform duration-300">
+
+        <div class="mb-10 flex items-center justify-between">
+            <a href="#home" class="text-2xl font-bold tracking-tight">
+                Flip<span class="text-blue-500">Play</span>
+            </a>
+
+            <button
+                id="sidebar-close"
+                type="button"
+                class="rounded-lg p-2 text-slate-400 hover:bg-slate-800 hover:text-white"
+                aria-label="Tutup menu">
+                ✕
+            </button>
+        </div>
+
+        <nav class="flex flex-col gap-2" aria-label="Navigasi utama">
+            <a href="#home"
+               class="nav-link rounded-lg px-4 py-3 text-slate-300 transition hover:bg-slate-800 hover:text-white"
+               aria-current="location">
+                Home
+            </a>
+
+            <a href="#explore"
+               class="nav-link rounded-lg px-4 py-3 text-slate-300 transition hover:bg-slate-800 hover:text-white">
+                Explore
+            </a>
+
+            <a href="#about"
+               class="nav-link rounded-lg px-4 py-3 text-slate-300 transition hover:bg-slate-800 hover:text-white">
+                About
+            </a>
+
+            <a href="#contact"
+               class="nav-link rounded-lg px-4 py-3 text-slate-300 transition hover:bg-slate-800 hover:text-white">
+                Contact
+            </a>
+
+            <a href="./api.html"
+               class="mt-4 rounded-lg bg-blue-600 px-4 py-3 font-medium text-white transition hover:bg-blue-700">
+                API Demo →
+            </a>
+        </nav>
+
+        <div class="mt-auto border-t border-slate-700 pt-5 text-sm text-slate-500">
+            <p>FlipPlay</p>
+            <p class="mt-1">Explore your entertainment.</p>
+        </div>
+    </aside>
+
+    <main>
+
+        <header class="sticky top-0 z-30 border-b border-slate-700/70 bg-flip-dark/90 backdrop-blur-lg">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+
+                <div class="flex items-center gap-4">
+                    <button
+                        id="menu-toggle"
+                        type="button"
+                        class="rounded-lg border border-slate-700 p-2 transition hover:bg-slate-800"
+                        aria-label="Buka menu"
+                        aria-controls="sidebar"
+                        aria-expanded="false">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-6 w-6"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="1.8">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+
+                    <a href="#home" class="text-xl font-bold md:text-2xl">
+                        Flip<span class="text-blue-500">Play</span>
+                    </a>
+                </div>
+
+                <a href="./api.html"
+                   class="rounded-lg bg-blue-600 px-4 py-2 text-sm font-semibold transition hover:bg-blue-700">
+                    API Demo
+                </a>
+            </div>
+        </header>
+
+        <section id="home" class="relative overflow-hidden">
+
+            <div class="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-blue-600/20 blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 h-80 w-80 rounded-full bg-purple-600/20 blur-3xl"></div>
+
+            <div class="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-24 md:grid-cols-2 md:px-8 md:py-32">
+
+                <div>
+                    <p class="mb-5 inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-2 text-sm text-blue-300">
+                        Your entertainment starts here
+                    </p>
+
+                    <h1 class="text-4xl font-extrabold leading-tight md:text-6xl">
+                        Explore Dunia
+                        <span class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+                            Hiburanmu.
+                        </span>
+                    </h1>
+
+                    <p class="mt-6 max-w-xl leading-7 text-slate-400">
+                        Temukan anime, drama, manga, dan light novel favoritmu
+                        dalam satu tempat. Jelajahi berbagai cerita dan temukan
+                        hiburan yang sesuai dengan seleramu.
+                    </p>
+
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="#explore"
+                           class="rounded-xl bg-blue-600 px-6 py-3 font-semibold transition hover:bg-blue-700">
+                            Mulai Explore
+                        </a>
+
+                        <a href="./api.html"
+                           class="rounded-xl border border-slate-600 px-6 py-3 font-semibold transition hover:border-blue-400 hover:bg-slate-800">
+                            Coba API Demo
+                        </a>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+
+                    <div class="rounded-2xl border border-slate-700 bg-slate-800/70 p-6">
+                        <div class="mb-4 text-4xl">🎌</div>
+                        <h2 class="text-lg font-bold">Anime</h2>
+                        <p class="mt-2 text-sm leading-6 text-slate-400">
+                            Jelajahi dunia animasi dari berbagai genre.
+                        </p>
+                    </div>
+
+                    <div class="mt-10 rounded-2xl border border-slate-700 bg-slate-800/70 p-6">
+                        <div class="mb-4 text-4xl">📺</div>
+                        <h2 class="text-lg font-bold">Drama</h2>
+                        <p class="mt-2 text-sm leading-6 text-slate-400">
+                            Temukan kisah menarik untuk menemani waktumu.
+                        </p>
+                    </div>
+
+                    <div class="rounded-2xl border border-slate-700 bg-slate-800/70 p-6">
+                        <div class="mb-4 text-4xl">📚</div>
+                        <h2 class="text-lg font-bold">Manga</h2>
+                        <p class="mt-2 text-sm leading-6 text-slate-400">
+                            Baca cerita melalui ilustrasi yang menarik.
+                        </p>
+                    </div>
+
+                    <div class="mt-10 rounded-2xl border border-slate-700 bg-slate-800/70 p-6">
+                        <div class="mb-4 text-4xl">📖</div>
+                        <h2 class="text-lg font-bold">Light Novel</h2>
+                        <p class="mt-2 text-sm leading-6 text-slate-400">
+                            Nikmati cerita dengan imajinasi tanpa batas.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="explore" class="border-t border-slate-800 bg-slate-900/50">
+            <div class="mx-auto max-w-7xl px-5 py-20 md:px-8">
+
+                <div class="mb-12">
+                    <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-400">
+                        Discover
+                    </p>
+
+                    <h2 class="text-3xl font-bold md:text-4xl">
+                        Explore Kategori
+                    </h2>
+
+                    <p class="mt-4 max-w-2xl leading-7 text-slate-400">
+                        Pilih kategori hiburan yang kamu sukai dan temukan
+                        cerita baru untuk dinikmati.
+                    </p>
+                </div>
+
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+                    <article class="group overflow-hidden rounded-2xl border border-slate-700 bg-slate-800 transition duration-300 hover:-translate-y-1 hover:border-blue-500">
+                        <img
+                            src="./Photos/image.png"
+                            alt="Anime"
+                            class="h-52 w-full object-cover transition duration-300 group-hover:opacity-90"
+                            loading="lazy">
+
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Anime</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-400">
+                                Temukan anime action, romance, fantasy, comedy,
+                                dan berbagai genre lainnya.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="group overflow-hidden rounded-2xl border border-slate-700 bg-slate-800 transition duration-300 hover:-translate-y-1 hover:border-purple-500">
+                        <img
+                            src="./Photos/drama.png"
+                            alt="Drama"
+                            class="h-52 w-full object-cover transition duration-300 group-hover:opacity-90"
+                            loading="lazy">
+
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Drama</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-400">
+                                Jelajahi drama dengan kisah emosional,
+                                romantis, dan penuh kejutan.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="group overflow-hidden rounded-2xl border border-slate-700 bg-slate-800 transition duration-300 hover:-translate-y-1 hover:border-pink-500">
+                        <img
+                            src="./Photos/manga.png"
+                            alt="Manga"
+                            class="h-52 w-full object-cover transition duration-300 group-hover:opacity-90"
+                            loading="lazy">
+
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Manga</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-400">
+                                Nikmati cerita bergambar dari petualangan
+                                hingga kehidupan sehari-hari.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="group overflow-hidden rounded-2xl border border-slate-700 bg-slate-800 transition duration-300 hover:-translate-y-1 hover:border-amber-500">
+                        <img
+                            src="./Photos/lightNovel.png"
+                            alt="Light Novel"
+                            class="h-52 w-full object-cover transition duration-300 group-hover:opacity-90"
+                            loading="lazy">
+
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold">Light Novel</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-400">
+                                Masuki dunia fiksi melalui cerita yang
+                                detail dan penuh imajinasi.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+
+                <div class="mt-12 flex flex-col justify-between gap-6 rounded-2xl border border-blue-500/30 bg-blue-500/5 p-7 md:flex-row md:items-center md:p-10">
+
+                    <div>
+                        <p class="text-sm font-semibold text-blue-400">
+                            FEATURE DEMO
+                        </p>
+
+                        <h3 class="mt-2 text-2xl font-bold">
+                            Data dari Public API
+                        </h3>
+
+                        <p class="mt-3 max-w-2xl leading-7 text-slate-400">
+                            Lihat contoh pengambilan data menggunakan Fetch API,
+                            lengkap dengan tampilan data, loading, dan penanganan error.
+                        </p>
+                    </div>
+
+                    <a href="./api.html"
+                       class="shrink-0 rounded-xl bg-blue-600 px-6 py-3 text-center font-semibold transition hover:bg-blue-700">
+                        Lihat API Demo →
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about" class="border-t border-slate-800">
+            <div class="mx-auto max-w-4xl px-5 py-20 text-center md:px-8">
+
+                <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-400">
+                    About Us
+                </p>
+
+                <h2 class="text-3xl font-bold md:text-4xl">
+                    Tentang FlipPlay
+                </h2>
+
+                <p class="mx-auto mt-6 max-w-3xl leading-8 text-slate-400">
+                    FlipPlay adalah website bertema hiburan yang dirancang
+                    untuk membantu pengguna menjelajahi berbagai kategori,
+                    mulai dari anime, drama, manga, hingga light novel.
+                    Website ini juga menjadi media pembelajaran pengembangan
+                    web menggunakan HTML, Tailwind CSS, dan JavaScript.
+                </p>
+
+                <div class="mt-10 grid gap-4 text-left sm:grid-cols-3">
+
+                    <div class="rounded-xl border border-slate-700 bg-slate-900 p-5">
+                        <h3 class="font-bold">HTML</h3>
+                        <p class="mt-2 text-sm text-slate-400">
+                            Menyusun struktur halaman website.
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-700 bg-slate-900 p-5">
+                        <h3 class="font-bold">Tailwind CSS</h3>
+                        <p class="mt-2 text-sm text-slate-400">
+                            Mengatur tampilan dan responsivitas.
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl border border-slate-700 bg-slate-900 p-5">
+                        <h3 class="font-bold">JavaScript</h3>
+                        <p class="mt-2 text-sm text-slate-400">
+                            Menambahkan interaksi dan validasi form.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="border-t border-slate-800 bg-slate-900/50">
+            <div class="mx-auto max-w-3xl px-5 py-20 md:px-8">
+
+                <div class="mb-10 text-center">
+                    <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-400">
+                        Get in Touch
+                    </p>
+
+                    <h2 class="text-3xl font-bold md:text-4xl">
+                        Hubungi Kami
+                    </h2>
+
+                    <p class="mt-4 leading-7 text-slate-400">
+                        Punya saran atau pertanyaan? Kirimkan pesan melalui
+                        formulir di bawah ini.
+                    </p>
+                </div>
+
+                <form class="space-y-5 rounded-2xl border border-slate-700 bg-slate-900 p-6 md:p-8">
+
+                    <div>
+                        <label for="name" class="mb-2 block text-sm font-medium">
+                            Nama
+                        </label>
+
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            autocomplete="name"
+                            placeholder="Masukkan nama kamu"
+                            required
+                            class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 outline-none transition placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
+                    </div>
+
+                    <div>
+                        <label for="email" class="mb-2 block text-sm font-medium">
+                            Email
+                        </label>
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            autocomplete="email"
+                            placeholder="nama@email.com"
+                            required
+                            class="w-full rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 outline-none transition placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20">
+                    </div>
+
+                    <div>
+                        <label for="message" class="mb-2 block text-sm font-medium">
+                            Pesan
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            placeholder="Tulis pesan kamu di sini..."
+                            required
+                            class="w-full resize-y rounded-xl border border-slate-700 bg-slate-800 px-4 py-3 outline-none transition placeholder:text-slate-500 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20"></textarea>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="w-full rounded-xl bg-blue-600 px-6 py-3 font-semibold transition hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-900">
+                        Kirim Pesan
+                    </button>
+
+                </form>
+            </div>
+        </section>
+
+        <footer class="border-t border-slate-800">
+            <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-center md:flex-row md:items-center md:justify-between md:px-8 md:text-left">
+
+                <a href="#home" class="text-xl font-bold">
+                    Flip<span class="text-blue-500">Play</span>
+                </a>
+
+                <p class="text-sm text-slate-500">
+                    © 2026 FlipPlay. Dibuat untuk pembelajaran pengembangan web.
+                </p>
+
+                <a href="./api.html"
+                   class="text-sm text-blue-400 transition hover:text-blue-300">
+                    Public API Demo →
+                </a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script src="./script.js" defer></script>
+</body>
+</html>

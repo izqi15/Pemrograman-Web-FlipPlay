@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Vibe Grid - FlipPlay</title>
+    <link rel="stylesheet" href="./output.css">
+</head>
+
+<body class="min-h-screen bg-slate-950 text-white">
+
+    <header class="border-b border-white/10 bg-slate-900">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
+            <a href="./index.html" class="text-2xl font-bold">
+                <span class="text-blue-500">Flip</span>Play
+            </a>
+            <a href="./index.html"
+               class="rounded-xl border border-white/10 px-4 py-2 text-sm text-slate-300 hover:bg-slate-800">
+                Kembali ke Home
+            </a>
+        </div>
+    </header>
+
+    <main class="mx-auto max-w-7xl px-6 py-12">
+
+        <section>
+            <p class="text-sm font-bold uppercase tracking-widest text-blue-400">
+                Your next obsession starts here
+            </p>
+
+            <h1 class="mt-3 text-4xl font-black sm:text-6xl">
+                The Vibe <span class="text-blue-500">Grid.</span>
+            </h1>
+
+            <p class="mt-4 max-w-2xl leading-7 text-slate-400">
+                Temukan anime dan manga sesuai mood kamu.
+                Cari judul favorit atau pilih Aura untuk menemukan
+                tontonan dan bacaan berikutnya.
+            </p>
+        </section>
+
+        <!-- Unified Search -->
+        <section class="mt-10">
+            <label for="search-input"
+                   class="mb-3 block text-sm font-semibold text-slate-300">
+                Cari anime atau manga
+            </label>
+
+            <input
+                id="search-input"
+                type="search"
+                placeholder="Cari judul favoritmu..."
+                class="w-full rounded-2xl border border-white/10 bg-slate-900 px-5 py-4 text-white outline-none transition placeholder:text-slate-500 focus:border-blue-500"
+            >
+        </section>
+
+        <!-- Category Filter -->
+        <section class="mt-8">
+            <h2 class="mb-4 text-sm font-bold uppercase tracking-wider text-slate-400">
+                Browse category
+            </h2>
+
+            <div class="flex flex-wrap gap-3">
+                <button data-category="all" class="category-btn rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold">
+                    All Media
+                </button>
+
+                <button data-category="anime" class="category-btn rounded-full border border-white/10 bg-slate-900 px-5 py-2 text-sm hover:border-blue-500">
+                    Anime
+                </button>
+
+                <button data-category="manga" class="category-btn rounded-full border border-white/10 bg-slate-900 px-5 py-2 text-sm hover:border-blue-500">
+                    Manga
+                </button>
+
+                <button data-category="drama" class="category-btn rounded-full border border-white/10 bg-slate-900 px-5 py-2 text-sm hover:border-blue-500">
+                    Drama Genre
+                </button>
+            </div>
+        </section>
+
+        <!-- Aura Discovery -->
+        <section class="mt-9">
+            <h2 class="mb-4 text-sm font-bold uppercase tracking-wider text-slate-400">
+                Choose your Aura
+            </h2>
+
+            <div class="flex flex-wrap gap-3">
+                <button data-aura="all" class="aura-btn rounded-full border border-blue-500 bg-blue-500/10 px-5 py-3 text-sm font-semibold text-blue-300">
+                    All Vibes
+                </button>
+
+                <button data-aura="energy" class="aura-btn rounded-full border border-white/10 bg-slate-900 px-5 py-3 text-sm hover:border-orange-400">
+                    High Energy
+                </button>
+
+                <button data-aura="melancholy" class="aura-btn rounded-full border border-white/10 bg-slate-900 px-5 py-3 text-sm hover:border-purple-400">
+                    Melancholy
+                </button>
+
+                <button data-aura="binge" class="aura-btn rounded-full border border-white/10 bg-slate-900 px-5 py-3 text-sm hover:border-green-400">
+                    Binge Mode
+                </button>
+            </div>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading" class="py-16 text-center">
+            <div class="mx-auto h-10 w-10 animate-spin rounded-full border-4 border-slate-700 border-t-blue-500"></div>
+            <p class="mt-5 font-semibold">Menyiapkan vibe kamu...</p>
+            <p class="mt-2 text-sm text-slate-400">Sedang mengambil data media.</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-message"
+             class="mt-8 hidden rounded-2xl border border-red-500/30 bg-red-500/10 p-6"
+             role="alert">
+            <h2 class="font-bold text-red-300">Data gagal dimuat</h2>
+            <p id="error-detail" class="mt-2 text-sm text-slate-300"></p>
+
+            <button id="retry-button"
+                    class="mt-4 rounded-xl bg-red-500/20 px-4 py-2 text-sm font-semibold text-red-200 hover:bg-red-500/30">
+                Coba Lagi
+            </button>
+        </div>
+
+        <!-- Result Info -->
+        <section class="mt-10">
+            <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+                <h2 class="text-2xl font-bold">Explore the Grid</h2>
+                <p id="result-count" class="text-sm text-slate-400" aria-live="polite">
+                    Menyiapkan data...
+                </p>
+            </div>
+
+            <div id="media-grid"
+                 class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            </div>
+
+            <p id="empty-message" class="hidden py-12 text-center text-slate-400">
+                Tidak ada media yang cocok. Coba kata kunci atau Aura lain.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="mt-16 border-t border-white/10 py-6 text-center text-sm text-slate-500">
+        © 2026 FlipPlay · Find your next vibe.
+    </footer>
+
+    <script src="./api.js" defer></script>
+</body>
+</html>

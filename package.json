@@ -1,0 +1,14 @@
+{
+  "name": "flipplay-modul-1",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FlipPlay coursework project using HTML, JavaScript, and Tailwind CSS v4",
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./main.css -o ./output.css",
+    "watch:css": "npx @tailwindcss/cli -i ./main.css -o ./output.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
